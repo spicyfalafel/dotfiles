@@ -56,9 +56,10 @@ local nvchad = {
       ["<localleader>tT"] = { ":CcaNreplJumpToFailingCljTest<CR>", desc = "Go to failing test" },
     }
   },
-  no_neck_pain = {
+  zen_mode = {
     n = {
-      ["<leader>uo"] = { ":NoNeckPain<CR>", desc = "center" },
+      ["<leader>uo"] = { ":TZAtaraxis<CR>", desc = "center" },
+      ["<leader>uO"] = { ":TZMinimalist<CR>", desc = "center2" },
 
     }
 

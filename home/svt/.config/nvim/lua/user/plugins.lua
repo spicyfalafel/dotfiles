@@ -34,117 +34,117 @@ return {
 	    end,
 
     },
-  --   ["nvim-neorg/neorg"] = {
-  --     ft = "norg",
-  --     after = "nvim-treesitter", -- You may want to specify Telescope here as well
-  --     run = ":Neorg sync-parsers",
-  --     config = function()
-  --       require('neorg').setup {
-  --         load = {
-  --           ["core.defaults"] = {},
-  --           ["core.norg.dirman"] = {
-  --             config = {
-  --               workspaces = {
-  --                 work = "~/notes/work",
-  --                 home = "~/notes/home",
-  --               }
-  --             }
-  --           },
-  --           ["core.norg.concealer"] = {},
-  --           ["core.norg.completion"] = {
-  --             engine = "nvim-cmp"
-  --           },
-  --           ["core.presenter"] = {
-  --             config = { -- Note that this table is optional and doesn't need to be provided
-  --             zen_mode = "truezen"
-  --             -- Configuration here
-  --           }
-  --         }
-  --       }
-  --     }
-  --   end
-  -- },
-  -- do not work for some reason
-  ['LukasPietzschmann/telescope-tabs'] = {
-	  requires = { 'nvim-telescope/telescope.nvim' },
-	  config = function()
-		  require'telescope-tabs'.setup{
-			  -- Your custom config :^)
-		  }
-	  end
+    --   ["nvim-neorg/neorg"] = {
+    --     ft = "norg",
+    --     after = "nvim-treesitter", -- You may want to specify Telescope here as well
+    --     run = ":Neorg sync-parsers",
+    --     config = function()
+    --       require('neorg').setup {
+    --         load = {
+    --           ["core.defaults"] = {},
+    --           ["core.norg.dirman"] = {
+    --             config = {
+    --               workspaces = {
+    --                 work = "~/notes/work",
+    --                 home = "~/notes/home",
+    --               }
+    --             }
+    --           },
+    --           ["core.norg.concealer"] = {},
+    --           ["core.norg.completion"] = {
+    --             engine = "nvim-cmp"
+    --           },
+    --           ["core.presenter"] = {
+    --             config = { -- Note that this table is optional and doesn't need to be provided
+    --             zen_mode = "truezen"
+    --             -- Configuration here
+    --           }
+    --         }
+    --       }
+    --     }
+    --   end
+    -- },
+    -- do not work for some reason
+    ['LukasPietzschmann/telescope-tabs'] = {
+	    requires = { 'nvim-telescope/telescope.nvim' },
+	    config = function()
+		    require'telescope-tabs'.setup{
+			    -- Your custom config :^)
+		    }
+	    end
 
+    },
+    ["rareitems/hl_match_area.nvim"] = {
+      config = function()
+        require("hl_match_area").setup()
+      end,
+    },
+    ["princejoogie/dir-telescope.nvim"] = {
+      -- telescope.nvim is a required dependency
+      requires = {"nvim-telescope/telescope.nvim"},
+      config = function()
+        require("dir-telescope").setup({
+          hidden = true,
+          respect_gitignore = true,
+        })
+        require("telescope").load_extension("dir")
+      end
+    },
+    ["shortcuts/no-neck-pain.nvim"] = {
+      tag = "*",
+      config = function()
+        require("no-neck-pain").setup({
+          width = 1000
+        })
+      end,
+    },
+    ["folke/todo-comments.nvim"] = {
+      requires = "nvim-lua/plenary.nvim",
+      config = function()
+        require("todo-comments").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      end
+    },
+    ["p00f/nvim-ts-rainbow"] = { disable = true },
+    ["Olical/conjure"] = require "user.plugins.conjure",
+    ["Invertisment/conjure-clj-additions-cider-nrepl-mw"] = {},
+
+    ['Pocco81/auto-save.nvim'] = require "user.plugins.auto-save",
+
+    ['guns/vim-sexp'] = {},
+
+    ["ggandor/leap.nvim"] = require "user.plugins.leap",
+
+    ['f-person/git-blame.nvim'] = {
+    },
+
+    ["NTBBloodbath/rest.nvim"] = require "user.plugins.rest",
+
+    -- ["TimUntersberger/neogit"] = {
+    --   requires = { "nvim-lua/plenary.nvim" }
+    -- },
+
+    -- ['mfussenegger/nvim-lint'] = {
+    --   config = function()
+    --     require("lint").linters_by_ft = {
+    --       clojure = {"clj-kondo"},
+    --     }
+    --   end,
+    -- },
+
+
+
+    -- We also support a key value style plugin definition similar to NvChad:
+    -- ["ray-x/lsp_signature.nvim"] = {
+    --   event = "BufRead",
+    --   config = function()
+    --     require("lsp_signature").setup()
+    --   end,
+    -- },
   },
-  ["rareitems/hl_match_area.nvim"] = {
-    config = function()
-      require("hl_match_area").setup()
-    end,
-  },
-  ["princejoogie/dir-telescope.nvim"] = {
-    -- telescope.nvim is a required dependency
-    requires = {"nvim-telescope/telescope.nvim"},
-    config = function()
-      require("dir-telescope").setup({
-        hidden = true,
-        respect_gitignore = true,
-      })
-      require("telescope").load_extension("dir")
-    end
-  },
-  ["shortcuts/no-neck-pain.nvim"] = {
-    tag = "*",
-    config = function()
-      require("no-neck-pain").setup({
-        width = 1000
-      })
-    end,
-  },
-  ["folke/todo-comments.nvim"] = {
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      require("todo-comments").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  },
-  ["p00f/nvim-ts-rainbow"] = { disable = true },
-  ["Olical/conjure"] = require "user.plugins.conjure",
-  ["Invertisment/conjure-clj-additions-cider-nrepl-mw"] = {},
-
-  ['Pocco81/auto-save.nvim'] = require "user.plugins.auto-save",
-
-  ['guns/vim-sexp'] = {},
-
-  ["ggandor/leap.nvim"] = require "user.plugins.leap",
-
-  ['f-person/git-blame.nvim'] = {
-  },
-
-  ["NTBBloodbath/rest.nvim"] = require "user.plugins.rest",
-
-  -- ["TimUntersberger/neogit"] = {
-  --   requires = { "nvim-lua/plenary.nvim" }
-  -- },
-
-  -- ['mfussenegger/nvim-lint'] = {
-  --   config = function()
-  --     require("lint").linters_by_ft = {
-  --       clojure = {"clj-kondo"},
-  --     }
-  --   end,
-  -- },
-
-
-
-  -- We also support a key value style plugin definition similar to NvChad:
-  -- ["ray-x/lsp_signature.nvim"] = {
-  --   event = "BufRead",
-  --   config = function()
-  --     require("lsp_signature").setup()
-  --   end,
-  -- },
-},
   -- All other entries override the require("<key>").setup({...}) call for default plugins
   ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
     -- config variable is the default configuration table for the setup function call

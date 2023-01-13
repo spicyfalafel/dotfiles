@@ -113,6 +113,7 @@ alias v="vim"
 alias vv="nvim"
 alias nv="nvim"
 alias t="trans -d -v --pager=bat"
+alias ya="yadm add"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fdfind --type f'
@@ -122,3 +123,5 @@ bindkey -v
 export MANPAGER='nvim +Man!'
 alias config='/usr/bin/git --git-dir=/home/svt/.cfg/ --work-tree=/home/svt'
 alias lg='lazygit'
+alias yadm="sudo yadm --yadm-dir /etc/yadm --yadm-data /etc/yadm/data"
+alias ya="sudo yadm --yadm-dir /etc/yadm --yadm-data /etc/yadm/data add"
