@@ -13,6 +13,38 @@ return {
     --     require("lsp_signature").setup()
     --   end,
     -- },
+    --
+
+    ["mickael-menu/zk-nvim"] = {
+      config = function()
+        require("zk").setup({
+          -- can be "telescope", "fzf" or "select" (`vim.ui.select`)
+          -- it's recommended to use "telescope" or "fzf"
+          picker = "telescope",
+
+          lsp = {
+            -- `config` is passed to `vim.lsp.start_client(config)`
+            config = {
+              cmd = { "zk", "lsp" },
+              name = "zk",
+              -- on_attach = ...
+              -- etc, see `:h vim.lsp.start_client()`
+            },
+
+            -- automatically attach buffers in a zk notebook that match the given filetypes
+            auto_attach = {
+              enabled = true,
+              filetypes = { "markdown" },
+            },
+          },
+        })
+      end
+    },
+    ['RaafatTurki/hex.nvim'] = {
+      config = function()
+        require 'hex'.setup()
+      end
+    },
     ["catppuccin/nvim"] = {
       config = function()
         require("catppuccin").setup {}
@@ -21,17 +53,17 @@ return {
     -- this is shitty
     ["cbochs/portal.nvim"] = {
       requires = {
-        "cbochs/grapple.nvim",  -- Optional: provides the "grapple" query item
+        "cbochs/grapple.nvim", -- Optional: provides the "grapple" query item
         "ThePrimeagen/harpoon", -- Optional: provides the "harpoon" query item
       },
     },
     ["Pocco81/true-zen.nvim"] = {
-	    config = function()
-		    require("true-zen").setup {
-			    -- your config goes here
-			    -- or just leave it empty :)
-		    }
-	    end,
+      config = function()
+        require("true-zen").setup {
+          -- your config goes here
+          -- or just leave it empty :)
+        }
+      end,
 
     },
     --   ["nvim-neorg/neorg"] = {
@@ -66,12 +98,12 @@ return {
     -- },
     -- do not work for some reason
     ['LukasPietzschmann/telescope-tabs'] = {
-	    requires = { 'nvim-telescope/telescope.nvim' },
-	    config = function()
-		    require'telescope-tabs'.setup{
-			    -- Your custom config :^)
-		    }
-	    end
+      requires = { 'nvim-telescope/telescope.nvim' },
+      config = function()
+        require 'telescope-tabs'.setup {
+          -- Your custom config :^)
+        }
+      end
 
     },
     ["rareitems/hl_match_area.nvim"] = {
@@ -81,7 +113,7 @@ return {
     },
     ["princejoogie/dir-telescope.nvim"] = {
       -- telescope.nvim is a required dependency
-      requires = {"nvim-telescope/telescope.nvim"},
+      requires = { "nvim-telescope/telescope.nvim" },
       config = function()
         require("dir-telescope").setup({
           hidden = true,
@@ -161,6 +193,15 @@ return {
     return config -- return final config table
   end,
 
+  ["nvim-neo-tree/neo-tree.nvim"] = function(config)
+    config.window = {
+      mappings = {
+        ["e"] = false,
+      },
+    }
+  return config
+  end,
+
   ["nvim-autopairs"] = function(config)
     config.enable_check_bracket_line = false
     return config
@@ -169,7 +210,6 @@ return {
   treesitter = { -- overrides `require("treesitter").setup(...)`
     -- ensure_installed = { "lua" },
   },
-
 
   ["nvim-treesitter.configs"] = function(config)
     local disable_function = function(lang)

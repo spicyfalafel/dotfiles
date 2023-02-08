@@ -19,7 +19,7 @@ local nvchad = {
       ["<S-l>"] = false,
       ["<S-h>"] = false,
       ["N"] = false,
-      ["k"] = false,
+      -- ["k"] = false,
       ["<C-k>"] = false,
       ["gx"] = false,
       ["<leader>gk"] = false,
@@ -116,6 +116,8 @@ local nvchad = {
       ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+      ["gd"] = {function() vim.lsp.buf.definition() end, desc = "go to definition my"}
+
     }
   },
   navigation = {
@@ -128,9 +130,11 @@ local nvchad = {
       ["<Leader>wv"] = { "<C-W>v", desc = "Vertical split" },
       ["<Leader>wd"] = { ":q<CR>", desc = "Close buffer" },
       ["<leader>op"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
-      ["<S-n>"] = { '<Plug>(leap-forward)', desc = "Leap forward"},
-      ["k"] = { '<Plug>(leap-cross-window)', desc = "Leap cross window"},
-      ["<S-e>"] = { '<Plug>(leap-backward)', desc = "Leap backward"},
+      ["k"] = { '<cmd>ConjureEvalCurrentForm<cr>', desc = "eval form conjure"},
+      ["<S-s>"] = { '<cmd>ConjureEvalCurrentForm<cr>', desc = "eval form conjure"},
+      ["<S-n>"] = { '<cmd>ConjureEvalCurrentForm<cr>', desc = "eval form conjure"},
+      -- ["k"] = { '<Plug>(leap-cross-window)', desc = "Leap cross window"},
+      -- ["<S-e>"] = { '<Plug>(leap-backward)', desc = "Leap backward"},
       ["<leader>bl"] = { ':bprevious<cr>', desc = "Previous buffer"},
       -- ["H"] = { '?<cr>', desc = "search backwards"},
       -- ["h"] = { '/<cr>', desc = "search"},

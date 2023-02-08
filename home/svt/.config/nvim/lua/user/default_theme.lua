@@ -1,4 +1,5 @@
 return 
+-- "nvim-nightsky"
 "catppuccin"
 -- {
 --   -- Modify the color palette for the default theme

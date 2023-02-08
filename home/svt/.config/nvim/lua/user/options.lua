@@ -50,5 +50,69 @@ return {
     ['conjure#mapping#doc_word'] = false,
     ['conjure.log.jump_to_latest.enabled'] = true,
     ['conjure.log.wrap'] = true,
-  },
+    ['conjure#eval#inline#highlight'] = "Directory",-- "Conceal", -- "ColorColumn",
+    ['conjure#mapping#eval_current_form'] = "n"
+  }
 }
+
+-- CurSearch
+-- Cursor
+-- lCursor
+-- CursorIM
+-- CursorColumn	
+-- CursorLine	S
+-- Directory	D
+-- DiffAdd		D
+-- DiffChange	D
+-- DiffDelete	D
+-- DiffText	D
+-- EndOfBuffer	F
+-- TermCursor	C
+-- TermCursorNC	C
+-- ErrorMsg	E
+-- WinSeparator	S
+-- Folded		L
+-- FoldColumn	'
+-- SignColumn	C
+-- IncSearch	'
+-- Substitute	|
+-- LineNr		L
+-- LineNrAbove	L
+-- LineNrBelow	L
+-- CursorLineNr	L
+-- CursorLineSign	L
+-- CursorLineFold	L
+-- MatchParen	
+-- ModeMsg	
+-- MsgArea		
+-- MsgSeparator	
+-- MoreMsg
+-- NonText	
+-- Normal		
+-- NormalFloat	
+-- NormalNC	
+-- Pmenu	
+-- PmenuSel
+-- PmenuSbar	
+-- PmenuThumb	
+-- Question	
+-- QuickFixLine	
+-- Search		
+-- SpecialKey	
+-- SpellBad
+-- SpellCap	
+-- SpellLocal	
+-- SpellRare	
+-- StatusLine	
+-- StatusLineNC	
+-- TabLine		
+-- TabLineFill
+-- TabLineSel	
+-- Title	
+-- Visual	
+-- VisualNOS
+-- WarningMsg
+-- Whitespace
+-- WildMenu
+-- WinBar
+-- WinBarNC	
