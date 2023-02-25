@@ -14,14 +14,17 @@ return {
     --   end,
     -- },
     --
-
+    ['glacambre/firenvim'] = {
+      run = function()
+        vim.fn['firenvim#install'](0)
+      end
+    },
     ["mickael-menu/zk-nvim"] = {
       config = function()
         require("zk").setup({
           -- can be "telescope", "fzf" or "select" (`vim.ui.select`)
           -- it's recommended to use "telescope" or "fzf"
           picker = "telescope",
-
           lsp = {
             -- `config` is passed to `vim.lsp.start_client(config)`
             config = {
@@ -166,7 +169,8 @@ return {
     --     }
     --   end,
     -- },
-
+    -- do not remove
+    ["nvim-lua/plenary.nvim"] = {},
 
 
     -- We also support a key value style plugin definition similar to NvChad:
@@ -192,25 +196,21 @@ return {
     }
     return config -- return final config table
   end,
-
   ["nvim-neo-tree/neo-tree.nvim"] = function(config)
     config.window = {
       mappings = {
         ["e"] = false,
       },
     }
-  return config
+    return config
   end,
-
   ["nvim-autopairs"] = function(config)
     config.enable_check_bracket_line = false
     return config
   end,
-
   treesitter = { -- overrides `require("treesitter").setup(...)`
     -- ensure_installed = { "lua" },
   },
-
   ["nvim-treesitter.configs"] = function(config)
     local disable_function = function(lang)
       local buf_name = vim.fn.expand("%")
@@ -224,10 +224,6 @@ return {
     }
     return config
   end,
-
-
-
-
   -- use mason-lspconfig to configure LSP installations
   ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
     -- ensure_installed = { "sumneko_lua" },
@@ -235,5 +231,18 @@ return {
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
   ["mason-null-ls"] = { -- overrides `require("mason-null-ls").setup(...)`
     -- ensure_installed = { "prettier", "stylua" },
+  },
+  ["mason-nvim-dap"] = {
+    setup_handlers = {
+      cppdbg = function(source_name)
+        local dap = require("dap")
+
+        dap.adapters.cppdbg = {
+          id = 'cppdbg',
+          type = 'executable',
+          command = '/home/svt/Downloads/dap/extension/debugAdapters/bin/OpenDebugAD7',
+        }
+      end,
+    },
   },
 }

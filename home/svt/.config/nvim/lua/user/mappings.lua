@@ -70,13 +70,6 @@ local nvchad = {
       ["<leader>fg"] =  {"<cmd>Telescope dir find_files<CR>", desc = "find files in dir"}
     }
   },
-  portal = {
-    n = {
-      ["<leader>o"] = {require("portal").jump_backward, desc = "jump backward"},
-      ["<leader>i"] = {require("portal").jump_forward, desc = "jump forward"},
-    }
-  },
-
   colemak = {
     n = {
       ["n"] = { "<down>", desc = "down" },

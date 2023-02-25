@@ -1,8 +1,7 @@
-local function conjure_eval_with_dbg_prefix(clojure_fun_str)
-  local start_args_index = string.find(clojure_fun_str, "[")
-  local end_args_index = string.find(clojure_fun_str, "]")
-
-  return sum
+if vim.g.started_by_firenvim == true then
+  vim.o.laststatus = 0
+else
+  vim.o.laststatus = 2
 end
 
 local config = {

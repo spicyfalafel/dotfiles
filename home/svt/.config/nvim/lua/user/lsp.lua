@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   desc = "Turns off LSP for Conjure's buffer",
 })
 
-local job = require('plenary.job')
+-- local job = require('plenary.job')
 
 -- vim.api.nvim_create_autocmd("BufWritePost", {
 --   pattern = "*.clj",
