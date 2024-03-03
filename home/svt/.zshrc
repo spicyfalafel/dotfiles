@@ -8,7 +8,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="eastwood"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -78,11 +79,8 @@ plugins=(
     zsh-autosuggestions
     fast-syntax-highlighting
     z
-    sudo
-    web-search
     dirhistory
-    jsontools
-    thefuck
+    httpie
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -109,10 +107,7 @@ export EDITOR='nvim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias ls='ls -p --group-directories-first --color=auto'
-alias v="vim"
-alias vv="nvim"
 alias nv="nvim"
-alias t="trans -d -v --pager=bat"
 alias ya="yadm add"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -125,3 +120,30 @@ alias config='/usr/bin/git --git-dir=/home/svt/.cfg/ --work-tree=/home/svt'
 alias lg='lazygit'
 alias yadm="sudo yadm --yadm-dir /etc/yadm --yadm-data /etc/yadm/data"
 alias ya="sudo yadm --yadm-dir /etc/yadm --yadm-data /etc/yadm/data add"
+
+[ -f "/home/svt/.ghcup/env" ] && source "/home/svt/.ghcup/env" # ghcup-env
+
+
+export PATH="$PATH:/home/svt/.local/share/coursier/bin"
+export PATH="$PATH:/usr/bin"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/svt/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/svt/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/svt/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/svt/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# The next line updates PATH for Yandex Cloud CLI.
+if [ -f '/home/svt/yandex-cloud/path.bash.inc' ]; then source '/home/svt/yandex-cloud/path.bash.inc'; fi
+
+# The next line enables shell command completion for yc.
+if [ -f '/home/svt/yandex-cloud/completion.zsh.inc' ]; then source '/home/svt/yandex-cloud/completion.zsh.inc'; fi
+
+
+# bun completions
+[ -s "/home/svt/.bun/_bun" ] && source "/home/svt/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

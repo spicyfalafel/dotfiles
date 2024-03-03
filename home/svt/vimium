@@ -1,0 +1,31 @@
+map n scrollDown
+# dont delete
+mapkey e k
+map N previousTab
+map E nextTab
+map l scrollPageDown
+map u scrollPageUp
+# dont delete
+mapkey k f
+# dont delete
+mapkey K F
+
+map h performFind
+map H performBackwardsFind
+
+map s Vomnibar.activate keyword=g
+map Z createTab https://docs.aidbox.app/
+map Y createTab https://youtube.com/
+map R reload hard
+map ' createTab https://clojuredocs.org/
+
+map Q LinkHints.activateMode action=hover
+map X LinkHints.activateMode action=focus
+
+map d removeTab
+
+map , scrollLeft
+map . scrollRight
+
+map <c-o> goBack
+map <c-i> goForward
